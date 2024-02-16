@@ -84,6 +84,7 @@ architecture top_basys3_arch of top_basys3 is
   signal w_Cout1 : std_logic := '0'; 
   signal w_Cout2 : std_logic := '0';
   signal w_S1 : std_logic := '0';
+  signal w_S2 : std_logic := '0'; --got this line from the internet 
   
 begin
 	-- PORT MAPS --------------------
@@ -97,13 +98,14 @@ begin
    halfAdder2_inst: halfAdder port map(
     i_A => w_S1,
     i_B => sw(2),
-    o_S => led(0),
+    o_S => w_S2,
     o_Cout => w_Cout2
    );
    
 	---------------------------------
 	
 	-- CONCURRENT STATEMENTS --------
+	 led(0) <= w_S2;
 	 led(1) <= w_Cout1 or w_Cout2;
 	---------------------------------
 end top_basys3_arch;

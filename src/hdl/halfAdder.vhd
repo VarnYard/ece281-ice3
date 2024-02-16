@@ -64,6 +64,7 @@ entity halfAdder is
 end halfAdder;
 
 architecture halfAdder_arch of halfAdder is 
+
 	-- this is where you would include components declarations and signals if you needed them
 	  
 begin
